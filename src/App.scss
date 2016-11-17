@@ -1,0 +1,134 @@
+
+//vars
+$mainBlue:      #16a9e1;
+$fb:            #475993;
+$twitter:       #2aa9e0; 
+$gplus:         #d84b37;
+$white:         #fff;
+$black:         #000;
+$text:          #084055;
+
+//mixins
+@mixin flexcenter {
+   display: flex;
+    justify-content: center;
+}
+//body&&header
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  align-items: center;
+  color:$text;
+  @include flexcenter;
+}
+#root{
+  @include flexcenter;
+  align-items: center;
+  
+}
+.App {
+  max-width: 275px;
+
+  @media(min-width:415px){
+     text-align: center;
+    max-width: 400px;
+  }
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 100px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: .97em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+//switch
+.switch {
+    
+  @include flexcenter;
+  justify-content: space-around;
+  border: 4px solid $mainBlue ;
+ 
+    a { 
+        padding:5px 38px;
+        font-size:17px;
+        background:$mainBlue;
+        color: $white;
+        text-transform: uppercase;
+        text-decoration: none;
+          @media(min-width:415px){
+            padding: 10px 60px; 
+            font-size: 22px;
+          }
+          &:hover {
+            background:$white;
+            color:$mainBlue;
+          }
+      }
+  }
+//social
+.social {
+    display: flex;
+    justify-content: space-between;
+}
+button {
+    width: 120px;
+    padding: 0px 10px;
+    border-radius: 10px;
+    cursor:pointer;
+    border: none;
+     img {
+        height: 35px;
+    }   
+}
+.fb{
+      background:$fb;
+      &:hover{
+        background: lighten($fb,10%);
+      }
+    }
+    .twitter{
+      background:$twitter;
+       &:hover{
+        background: lighten($twitter,10%);
+      }
+    }
+    .gplus{
+      background:$gplus;
+       &:hover{
+        background: lighten($gplus,10%);
+      }
+    }
+//Seperator 
+.orSeperator{
+    margin:40px 0px;
+  h2 { 
+    width:100%; 
+    text-align:center; 
+    border-bottom: 1px dashed $black; 
+    line-height:0.1em; 
+    margin:10px 0 20px; 
+    } 
+  h2 span { 
+      background:$white; 
+      padding: 12px 8px;
+      border: 1px solid;
+      border-radius: 100%;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: lighter;
+    }
+}
+
