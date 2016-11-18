@@ -1,20 +1,27 @@
 
 //vars
-$mainBlue:      #16a9e1;
-$fb:            #475993;
-$twitter:       #2aa9e0;
-$gplus:         #d84b37;
-$white:         #fff;
-$black:         #000;
-$text:          #084055;
-$color-border: #CDCDCD;
-$color-label: darken($color-border, 20%);
-$color-primary: #1695A3;
+$mainBlue:          #16a9e1;
+$fb:                #475993;
+$twitter:           #2aa9e0;
+$gplus:             #d84b37;
+$white:             #fff;
+$black:             #000;
+$text:              #084055;
+$color-border:      #CDCDCD;
+$color-label:       darken($color-border, 20%);
+$color-primary:     #1695A3;
 
 //mixins
 @mixin flexcenter {
-   display: flex;
+    display: flex;
     justify-content: center;
+}
+
+@mixin textBox {
+  border: 1px solid $mainBlue;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 //body&&header
 body {
@@ -26,6 +33,14 @@ body {
   color:$text;
   @include flexcenter;
 }
+p {
+  font-size:12px;
+}
+a {
+  color:$mainBlue;
+  text-decoration:none;
+  font-size:12px;
+}
 #root{
   @include flexcenter;
   align-items: center;
@@ -33,7 +48,6 @@ body {
 }
 .App {
   max-width: 275px;
-
   @media(min-width:415px){
      text-align: center;
     max-width: 400px;
@@ -76,10 +90,14 @@ body {
             font-size: 21px;
           }
           &:hover {
-            background:$white;
-            color:$mainBlue;
+            background:lighten($mainBlue, 10%);
+            color:$white;
           }
       }
+  }
+  .selected{
+    background:$white!important;
+    color:$mainBlue!important;
   }
 //social
 .social {
@@ -134,9 +152,20 @@ button {
       font-weight: lighter;
     }
 }
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    //justify-content: space-between;
+    max-width: 400px;
+}
 .field {
-  display: block;
   margin-bottom: 0.5rem;
+  width:100%;
+}
+.field1{
+  margin-bottom: 0.5rem;
+  width:50%;
 }
 
 label {
@@ -146,22 +175,22 @@ label {
   font-weight: 600;
   color: $color-label;
 }
-input[type="text"],
+
 input[type="email"],
 input[type="password"],
 textarea,
 input:not([type]
 ) {
   appearance: none;
-  border: 1px solid $color-border;
-  font-size: 0.8rem;
-  padding: 0.5rem;
-  width: 100%;
-
-  &:focus {
-    outline: 2px solid $color-primary;
-  }
+  width: 95%;
+  @include textBox;
 }
+input[type="text"]{
+  appearance: none;
+  width: 90%;
+  @include textBox;
+}
+
 select {
   border-radius: 0;
   height: 2rem;
@@ -175,10 +204,10 @@ select {
 
 input[type="checkbox"],
 input[type="radio"] {
-  margin-right: 1ch;
+margin-right: 1ch;
 }
 
-button {
+.submit {
   width: 100%;
   appearance: none;
   padding: 1rem 2rem;
@@ -203,4 +232,9 @@ button {
   + button {
     margin-left: 1rem;
   }
+}
+.login-action {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

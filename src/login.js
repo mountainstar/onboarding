@@ -19,10 +19,8 @@ const store = createStore(combineForms({ user: initialUserState }));
 
 class Login extends Component{
 	componentDidMount() {
-		document.getElementById('login').style.backgroundColor="#fff";
-		document.getElementById('login').style.color="#16a9e1";
-		document.getElementById('signup').style.backgroundColor="#16a9e1";
-		document.getElementById('signup').style.color="#fff"
+    document.getElementById('login').classList.add('selected');
+    document.getElementById('signup').classList.remove('selected');
 	}
 
 	render() {
