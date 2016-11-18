@@ -6,7 +6,7 @@ const required = isNull;
 
 
 
-class LoginForm extends Component {
+class SignUpForm extends Component {
   render() {
     return (
 
@@ -25,10 +25,10 @@ class LoginForm extends Component {
               </Field>
 
               <button type="submit">
-                Login
+                Sign Up
               </button>
         </Form>
     )
   }
 }
-export default LoginForm
+export default SignUpForm

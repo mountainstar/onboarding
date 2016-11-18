@@ -2,11 +2,14 @@
 //vars
 $mainBlue:      #16a9e1;
 $fb:            #475993;
-$twitter:       #2aa9e0; 
+$twitter:       #2aa9e0;
 $gplus:         #d84b37;
 $white:         #fff;
 $black:         #000;
 $text:          #084055;
+$color-border: #CDCDCD;
+$color-label: darken($color-border, 20%);
+$color-primary: #1695A3;
 
 //mixins
 @mixin flexcenter {
@@ -26,7 +29,7 @@ body {
 #root{
   @include flexcenter;
   align-items: center;
-  
+
 }
 .App {
   max-width: 275px;
@@ -56,12 +59,12 @@ body {
 }
 //switch
 .switch {
-    
+
   @include flexcenter;
   justify-content: space-around;
   border: 4px solid $mainBlue ;
- 
-    a { 
+
+    a {
         padding:5px 38px;
         font-size:17px;
         background:$mainBlue;
@@ -69,8 +72,8 @@ body {
         text-transform: uppercase;
         text-decoration: none;
           @media(min-width:415px){
-            padding: 10px 60px; 
-            font-size: 23px;
+            padding: 10px 60px;
+            font-size: 21px;
           }
           &:hover {
             background:$white;
@@ -91,7 +94,7 @@ button {
     border: none;
      img {
         height: 35px;
-    }   
+    }
 }
 .fb{
       background:$fb;
@@ -111,18 +114,18 @@ button {
         background: lighten($gplus,10%);
       }
     }
-//Seperator 
+//Seperator
 .orSeperator{
     margin:40px 0px;
-  h2 { 
-    width:100%; 
-    text-align:center; 
-    border-bottom: 1px dashed $black; 
-    line-height:0.1em; 
-    margin:10px 0 20px; 
-    } 
-  h2 span { 
-      background:$white; 
+  h2 {
+    width:100%;
+    text-align:center;
+    border-bottom: 1px dashed $black;
+    line-height:0.1em;
+    margin:10px 0 20px;
+    }
+  h2 span {
+      background:$white;
       padding: 12px 8px;
       border: 1px solid;
       border-radius: 100%;
@@ -131,4 +134,73 @@ button {
       font-weight: lighter;
     }
 }
+.field {
+  display: block;
+  margin-bottom: 0.5rem;
+}
 
+label {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  color: $color-label;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+input:not([type]
+) {
+  appearance: none;
+  border: 1px solid $color-border;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  width: 100%;
+
+  &:focus {
+    outline: 2px solid $color-primary;
+  }
+}
+select {
+  border-radius: 0;
+  height: 2rem;
+  width: 100%;
+
+  &:focus {
+    border: 2px solid $color-primary;
+    outline: none;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 1ch;
+}
+
+button {
+  width: 100%;
+  appearance: none;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  background: $mainBlue;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  margin: 0.5rem 0;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &[type="reset"] {
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background: transparent;
+  }
+
+  + button {
+    margin-left: 1rem;
+  }
+}

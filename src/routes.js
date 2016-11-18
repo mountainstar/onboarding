@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, IndexRoute, Link } from 'react-router';
-import LoginForm from './loginform';
-import SigninForm from './signinform';
+import Login from './login';
+import SignUp from './signup';
 import twitter from './twitter.svg';
 import fb from './fb.svg';
 import gplus from './gplus.svg';
@@ -15,11 +15,11 @@ class OnBoarding extends Component {
 		return(
 			<div>
 				<div className="switch">
-		          <Link id="login" to="/">Login</Link> 
-		          <Link id="signin" to="/signinform">Signin</Link>    
+		          <Link id="login" to="/">Login</Link>
+							<Link id="signup" to="/signup">Sign Up</Link>
 	        	</div>
 	        	<h4>Connect With</h4>
-		          <div className="social">  
+		          <div className="social">
 		            <button className="fb"><img src={fb} role="presentation"/></button>
 		            <button className="twitter"><img src={twitter} role="presentation"/></button>
 		            <button className="gplus"><img src={gplus} role="presentation"/></button>
@@ -36,8 +36,7 @@ class OnBoarding extends Component {
 
 export default(
 	<Route path="/" component={OnBoarding}>
-		<IndexRoute component={ LoginForm } />
-		<Route path="signinform" component={ SigninForm } />
+		<IndexRoute component={ Login } />
+		<Route path="signup" component={ SignUp } />
 	</Route>
 )
-
