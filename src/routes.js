@@ -15,8 +15,8 @@ class OnBoarding extends Component {
 		return(
 			<div>
 				<div className="switch">
-		          <Link to="/">Login</Link> 
-		          <Link to="/signinform">Signin</Link>    
+		          <Link id="login" to="/">Login</Link> 
+		          <Link id="signin" to="/signinform">Signin</Link>    
 	        	</div>
 	        	<h4>Connect With</h4>
 		          <div className="social">  
