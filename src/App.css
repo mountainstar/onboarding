@@ -50,7 +50,7 @@ body {
     @media (min-width: 415px) {
       .switch a {
         padding: 10px 60px;
-        font-size: 22px; } }
+        font-size: 23px; } }
     .switch a:hover {
       background: #fff;
       color: #16a9e1; }

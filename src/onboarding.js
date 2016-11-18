@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Router } from 'react-router'
+import routes from './routes';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import logo from './logo-athlinks.svg';
-import twitter from './twitter.svg';
-import fb from './fb.svg';
-import gplus from './gplus.svg';
-import LoginForm from './loginform';
-import './App.css';
+
+
+const history = createBrowserHistory();
+
 
 class OnBoarding extends Component {
   render() {
@@ -14,20 +16,11 @@ class OnBoarding extends Component {
         <p className="App-intro">
           Add your results to your Athlinks Account
         </p>
-        <div className="switch">
-          <a href="#">login</a>
-          <a href="#">signup</a>
-        </div>
-        <h4>Connect With</h4>
-          <div className="social">  
-            <button className="fb"><img src={fb} role="presentation"/></button>
-            <button className="twitter"><img src={twitter} role="presentation"/></button>
-            <button className="gplus"><img src={gplus} role="presentation"/></button>
-          </div>
-          <div className="orSeperator">
-            <h2><span>or</span></h2>
-          </div>
-        <LoginForm />
+        <Router history={history}>
+              { routes }
+        </Router>
+        
+        
       </div>
     );
   }
