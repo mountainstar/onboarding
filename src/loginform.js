@@ -22,11 +22,11 @@ class LoginForm extends Component {
                   required: (val) => val && val.length,
                   isEmail: validator.isEmail
               }}>
-                <input  placeholder="EMAIL" type="email"/>
+                <input  placeholder="Email" type="email"/>
               </Field>
 
               <Field className="field" model="user.password">
-                <input placeholder="PASSWORD" type="password"/>
+                <input placeholder="Password" type="password"/>
               </Field>
               <div className="login-action"><div><input type="checkbox" />Remember Me</div> <a href="#">Forgot Password?</a></div>
               <button className="submit" type="submit">

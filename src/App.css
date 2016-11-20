@@ -3,7 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
   height: 100vh;
-  align-items: center;
   color: #084055;
   display: flex;
   justify-content: center; }
@@ -17,20 +16,23 @@ a {
   font-size: 12px; }
 
 #root {
+  margin-top: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center; }
+  justify-content: center; }
 
 .App {
-  max-width: 275px; }
+  max-width: 275px;
+  text-align: center; }
   @media (min-width: 415px) {
     .App {
-      text-align: center;
       max-width: 400px; } }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 100px; }
+  height: 75px; }
+  @media (min-width: 415px) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 100px; } }
 
 .App-header {
   background-color: #222;
@@ -46,26 +48,27 @@ a {
 .switch {
   display: flex;
   justify-content: center;
-  justify-content: space-around;
-  border: 4px solid #16a9e1; }
+  border: 4px solid #16a9e1;
+  background: #fff; }
   .switch a {
-    padding: 5px 38px;
-    font-size: 17px;
-    background: #16a9e1;
-    color: #fff;
+    width: 50%;
+    padding: 5px 0px;
+    font-size: .825em;
+    background: transparent;
+    color: #16a9e1;
     text-transform: uppercase;
     text-decoration: none; }
     @media (min-width: 415px) {
       .switch a {
-        padding: 10px 60px;
-        font-size: 21px; } }
+        padding: 10px 0px;
+        font-size: 1.315em; } }
     .switch a:hover {
-      background: #3ebcec;
+      background: #9bdcf5;
       color: #fff; }
 
 .selected {
-  background: #fff !important;
-  color: #16a9e1 !important; }
+  background: #16a9e1 !important;
+  color: #fff !important; }
 
 .social {
   display: flex;
@@ -119,12 +122,10 @@ form {
   max-width: 400px; }
 
 .field {
+  display: flex;
   margin-bottom: 0.5rem;
-  width: 100%; }
-
-.field1 {
-  margin-bottom: 0.5rem;
-  width: 50%; }
+  width: 100%;
+  justify-content: space-between; }
 
 label {
   display: block;
@@ -147,7 +148,7 @@ input:not([type]
 
 input[type="text"] {
   appearance: none;
-  width: 90%;
+  width: 45%;
   border: 1px solid #16a9e1;
   font-size: 0.8rem;
   padding: 0.5rem;
@@ -189,3 +190,11 @@ input[type="radio"] {
   width: 100%;
   display: flex;
   justify-content: space-between; }
+
+span.min-pass {
+  color: #084055;
+  font-size: .9em; }
+  span.min-pass:before {
+    font-family: fontawesome;
+    content: "\f00c";
+    margin-left: 5px; }
